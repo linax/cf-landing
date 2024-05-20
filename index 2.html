@@ -30,7 +30,7 @@
 <!--[if lte IE 7]><script src="lte-ie7.js"></script><![endif]-->
 
 <!-- WEB FONTS -->
-<link href='https://fonts.googleapis.com/css?family=Roboto:100,300,100italic,400,300italic' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Roboto:100,300,100italic,400,300italic' rel='stylesheet' type='text/css'>
 
 <!-- CAROUSEL AND LIGHTBOX -->
 <link rel="stylesheet" href="css/owl.theme.css">
@@ -59,7 +59,7 @@
 
 <!-- Mapa -->
 
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.5/leaflet.css" />
 
 <link rel="stylesheet" href="css/mapa.css" />
 
@@ -69,8 +69,8 @@
 <![endif]-->
 
 <!-- JQUERY -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="http://cdn.leafletjs.com/leaflet-0.5/leaflet.js"></script>
 
 </head>
 
@@ -131,14 +131,14 @@
 			<div class="navbar-collapse collapse" id="kane-navigation">
 				<ul class="nav navbar-nav navbar-right main-navigation">
 					<li><a href="#home">Inicio</a></li>
-					<li><a href="#map-section">Mapa</a></li>
+					<li><a href="#map-section">¡Mapa!</a></li>
 					<li><a href="#features">Características</a></li>
 					<li><a href="#brief1">¿Por qué Ciudad Fácil?</a></li>
 					<li><a href="#brief2">Descripción</a></li>
 					<!--<li><a href="#services">Servicios</a></li>-->
 					<li><a href="#screenshot-section">Dale un vistazo</a></li>
 					<li><a href="#download">Descargar!</a></li>
-					<li><a href="http://ciudadfacil.cl/blog/" class="external">¡Blog!</a></li>
+					<li><a href="http://ciudadfacil.cl/blog/" class="external">Opinones y más</a></li>
 
 				</ul>
 			</div>
@@ -205,15 +205,15 @@
      MAP SECTION 
 ============================== -->
 
-<section class="screenshots grey-bg" id="map-section">
+<!--<section class="screenshots grey-bg" id="map-section">
 
-<div class="container">
+<div class="container">-->
 	
 	<!-- SECTION HEADER -->
-	<div class="section-header wow fadeIn animated" data-wow-offset="10" data-wow-duration="1.5s">
-		
+	<!--<div class="section-header wow fadeIn animated" data-wow-offset="10" data-wow-duration="1.5s">
+		-->
 		<!-- SECTION TITLE -->
-		<h2 class="dark-text">Revisa nuestro Mapa</h2>
+	<!--	<h2 class="dark-text">Revisa nuestro Mapa</h2>
 		
 		<div class="colored-line">
 		</div>
@@ -225,12 +225,192 @@
 		<br/>
 		<br/>
 		
+	</div>-->
+	<!-- /END SECTION HEADER -->
+	
+	<!--<div class="row wow bounceIn animated" data-wow-offset="10" data-wow-duration="1.5s">
+		   <div id="map"></div>
+		
+		
+	</div>-->
+	<!-- /END ROW -->
+	
+<!--</div>-->
+<!-- /END CONTAINER -->
+
+<!--</section>-->
+
+
+<!-- =========================
+     Características
+============================== -->
+<section class="features" id="features">
+
+<div class="container">
+	
+	<!-- SECTION HEADER -->
+	<div class="section-header wow fadeIn animated" data-wow-offset="120" data-wow-duration="1.5s">
+		
+		<!-- SECTION TITLE -->
+		<h2 class="dark-text">Características</h2>
+		<div class="colored-line">
+		</div>
+		<div class="section-description">
+			¿Cómo te ayudará y cómo podrás participar en ciudad fácil? Aquí te contamos.
+		</div>
+		<div class="colored-line">
+		</div>
 	</div>
 	<!-- /END SECTION HEADER -->
 	
-	<div class="row wow bounceIn animated" data-wow-offset="10" data-wow-duration="1.5s">
-		   <div id="map"></div>
+	
+	<div class="row">
 		
+		<!-- FEATURES LEFT -->
+		<div class="col-md-4 col-sm-4 features-left wow fadeInLeft animated" data-wow-offset="10" data-wow-duration="1.5s">
+			
+			<!-- FEATURE -->
+			<div class="feature">
+				
+				<!-- ICON -->
+				<div class="icon-container">
+					<div class="icon">
+						<i class="icon_mobile"></i>
+					</div>
+				</div>
+				
+				<!-- FEATURE HEADING AND DESCRIPTION -->
+				<div class="fetaure-details">
+					<h4 class="main-color">Disponible en Android y iOS</h4>
+					<p>
+						 Nuestra versión 2.0 de Ciudad Fácil ya está disponible para dispositivos android y iOS (iPhone y iPad).
+					</p>
+				</div>
+				
+			</div>
+			<!-- /END SINGLE FEATURE -->
+			
+			<!-- FEATURE -->
+			<div class="feature">
+				
+				<!-- ICON -->
+				<div class="icon-container">
+					<div class="icon">
+						<i class="icon_tools"></i>
+					</div>
+				</div>
+				
+				<!-- FEATURE HEADING AND DESCRIPTION -->
+				<div class="fetaure-details">
+					<h4 class="main-color">Versión 2.0</h4>
+					<p>
+						 Nuestra versión 2.0 ha sido posible gracias al apoyo del Servicio Nacional de la Discapacidad (SENADIS).
+					</p>
+				</div>
+				
+			</div>
+			<!-- /END SINGLE FEATURE -->
+			
+			<!-- FEATURE -->
+			<div class="feature">
+				
+				<!-- ICON -->
+				<div class="icon-container">
+					<div class="icon">
+						<i class="icon_globe"></i>
+					</div>
+				</div>
+				
+				<!-- FEATURE HEADING AND DESCRIPTION -->
+				<div class="fetaure-details">
+					<h4 class="main-color">Úsala donde vayas</h4>
+					<p>
+						 No importa dónde estés, podrás usar Ciudad Fácil desde cualquier parte del mundo, donde haya conexión a internet.
+					</p>
+				</div>
+				
+			</div>
+			<!-- /END SINGLE FEATURE -->
+			
+		</div>
+		<!-- /END FEATURES LEFT -->
+		
+		<!-- PHONE IMAGE -->
+		<div class="col-md-4 col-sm-4">
+			<div class="phone-image wow bounceIn animated" data-wow-offset="120" data-wow-duration="1.5s">
+				<img src="images/portada-galaxy.jpg" alt="Imagen que muestra un teléfono samsung galaxy con un screenshot de la aplicación, donde se muestra el mapa de accesibilidad y sus íconos de lugares.">
+			</div>
+		</div>
+		
+		<!-- FEATURES RIGHT -->
+		<div class="col-md-4 col-sm-4 features-right wow fadeInRight animated" data-wow-offset="10" data-wow-duration="1.5s">
+			
+			<!-- FEATURE -->
+			<div class="feature">
+				
+				<!-- ICON -->
+				<div class="icon-container">
+					<div class="icon">
+						<i class="icon_pin"></i>
+					</div>
+				</div>
+				
+				<!-- FEATURE HEADING AND DESCRIPTION -->
+				<div class="fetaure-details">
+					<h4 class="main-color">Accesibilidad de Edificaciones</h4>
+					<p>
+						 Si fuiste a un lugar accesible y luego a uno dificil de transitar. ¡Compartelo con tus amigos!
+					</p>
+				</div>
+				
+			</div>
+			<!-- /END SINGLE FEATURE -->
+			
+			<!-- FEATURE -->
+			<div class="feature">
+				
+				<!-- ICON -->
+				<div class="icon-container">
+					<div class="icon">
+						<i class="icon_error-triangle"></i>
+					</div>
+				</div>
+				
+				<!-- FEATURE HEADING AND DESCRIPTION -->
+				<div class="fetaure-details">
+					<h4 class="main-color">Accesibilidad en veredas y cruces</h4>
+					<p>
+						 Si te encuentras con hoyos, árboles o irregularidades que te impiden libre tránsito así como obstaculos en los rebajes de las veredas. ¡Marcalos para que los evitemos y mejoremos!
+					</p>
+				</div>
+				
+			</div>
+			
+			<!-- /END SINGLE FEATURE -->
+			
+			<!-- FEATURE -->
+			<div class="feature">
+				
+				<!-- ICON -->
+				<div class="icon-container">
+					<div class="icon">
+						<i class="icon_map_alt"></i>
+					</div>
+				</div>
+				
+				<!-- FEATURE HEADING AND DESCRIPTION -->
+				<div class="fetaure-details">
+					<h4 class="main-color">Accesibilidad en espacios públicos</h4>
+					<p>
+						 Sean plazas, playas o parques, podrás agregarlos y/o buscarlos en Ciudad Fácil para conocer o dar a conocer su accesibilidad y así volver a aquellos lugares que te gustan.
+					</p>
+				</div>
+				
+			</div>
+			<!-- /END SINGLE FEATURE -->
+			
+		</div>
+		<!-- /END FEATURES RIGHT -->
 		
 	</div>
 	<!-- /END ROW -->
@@ -239,187 +419,7 @@
 <!-- /END CONTAINER -->
 
 </section>
-
-
-<!-- =========================
-     Características
-============================== -->
-<section class="features" id="features">
-
-	<div class="container">
-		
-		<!-- SECTION HEADER -->
-		<div class="section-header wow fadeIn animated" data-wow-offset="120" data-wow-duration="1.5s">
-			
-			<!-- SECTION TITLE -->
-			<h2 class="dark-text">Características</h2>
-			<div class="colored-line">
-			</div>
-			<div class="section-description">
-				¿Cómo te ayudará y cómo podrás participar en ciudad fácil? Aquí te contamos.
-			</div>
-			<div class="colored-line">
-			</div>
-		</div>
-		<!-- /END SECTION HEADER -->
-		
-		
-		<div class="row">
-			
-			<!-- FEATURES LEFT -->
-			<div class="col-md-4 col-sm-4 features-left wow fadeInLeft animated" data-wow-offset="10" data-wow-duration="1.5s">
-				
-				<!-- FEATURE -->
-				<div class="feature">
-					
-					<!-- ICON -->
-					<div class="icon-container">
-						<div class="icon">
-							<i class="icon_mobile"></i>
-						</div>
-					</div>
-					
-					<!-- FEATURE HEADING AND DESCRIPTION -->
-					<div class="fetaure-details">
-						<h4 class="main-color">Disponible en Android y iOS</h4>
-						<p>
-							 Nuestra versión 2.0 de Ciudad Fácil ya está disponible para dispositivos android y iOS (iPhone y iPad).
-						</p>
-					</div>
-					
-				</div>
-				<!-- /END SINGLE FEATURE -->
-				
-				<!-- FEATURE -->
-				<div class="feature">
-					
-					<!-- ICON -->
-					<div class="icon-container">
-						<div class="icon">
-							<i class="icon_tools"></i>
-						</div>
-					</div>
-					
-					<!-- FEATURE HEADING AND DESCRIPTION -->
-					<div class="fetaure-details">
-						<h4 class="main-color">Versión 2.0</h4>
-						<p>
-							 Nuestra versión 2.0 ha sido posible gracias al apoyo del Servicio Nacional de la Discapacidad (SENADIS).
-						</p>
-					</div>
-					
-				</div>
-				<!-- /END SINGLE FEATURE -->
-				
-				<!-- FEATURE -->
-				<div class="feature">
-					
-					<!-- ICON -->
-					<div class="icon-container">
-						<div class="icon">
-							<i class="icon_globe"></i>
-						</div>
-					</div>
-					
-					<!-- FEATURE HEADING AND DESCRIPTION -->
-					<div class="fetaure-details">
-						<h4 class="main-color">Úsala donde vayas</h4>
-						<p>
-							 No importa dónde estés, podrás usar Ciudad Fácil desde cualquier parte del mundo, donde haya conexión a internet.
-						</p>
-					</div>
-					
-				</div>
-				<!-- /END SINGLE FEATURE -->
-				
-			</div>
-			<!-- /END FEATURES LEFT -->
-			
-			<!-- PHONE IMAGE -->
-			<div class="col-md-4 col-sm-4">
-				<div class="phone-image wow bounceIn animated" data-wow-offset="120" data-wow-duration="1.5s">
-					<img src="images/portada-galaxy.jpg" alt="Imagen que muestra un teléfono samsung galaxy con un screenshot de la aplicación, donde se muestra el mapa de accesibilidad y sus íconos de lugares.">
-				</div>
-			</div>
-			
-			<!-- FEATURES RIGHT -->
-			<div class="col-md-4 col-sm-4 features-right wow fadeInRight animated" data-wow-offset="10" data-wow-duration="1.5s">
-				
-				<!-- FEATURE -->
-				<div class="feature">
-					
-					<!-- ICON -->
-					<div class="icon-container">
-						<div class="icon">
-							<i class="icon_pin"></i>
-						</div>
-					</div>
-					
-					<!-- FEATURE HEADING AND DESCRIPTION -->
-					<div class="fetaure-details">
-						<h4 class="main-color">Accesibilidad de Edificaciones</h4>
-						<p>
-							 Si fuiste a un lugar accesible y luego a uno dificil de transitar. ¡Compartelo con tus amigos!
-						</p>
-					</div>
-					
-				</div>
-				<!-- /END SINGLE FEATURE -->
-				
-				<!-- FEATURE -->
-				<div class="feature">
-					
-					<!-- ICON -->
-					<div class="icon-container">
-						<div class="icon">
-							<i class="icon_error-triangle"></i>
-						</div>
-					</div>
-					
-					<!-- FEATURE HEADING AND DESCRIPTION -->
-					<div class="fetaure-details">
-						<h4 class="main-color">Accesibilidad en veredas y cruces</h4>
-						<p>
-							 Si te encuentras con hoyos, árboles o irregularidades que te impiden libre tránsito así como obstaculos en los rebajes de las veredas. ¡Marcalos para que los evitemos y mejoremos!
-						</p>
-					</div>
-					
-				</div>
-				
-				<!-- /END SINGLE FEATURE -->
-				
-				<!-- FEATURE -->
-				<div class="feature">
-					
-					<!-- ICON -->
-					<div class="icon-container">
-						<div class="icon">
-							<i class="icon_map_alt"></i>
-						</div>
-					</div>
-					
-					<!-- FEATURE HEADING AND DESCRIPTION -->
-					<div class="fetaure-details">
-						<h4 class="main-color">Accesibilidad en espacios públicos</h4>
-						<p>
-							 Sean plazas, playas o parques, podrás agregarlos y/o buscarlos en Ciudad Fácil para conocer o dar a conocer su accesibilidad y así volver a aquellos lugares que te gustan.
-						</p>
-					</div>
-					
-				</div>
-				<!-- /END SINGLE FEATURE -->
-				
-			</div>
-			<!-- /END FEATURES RIGHT -->
-			
-		</div>
-		<!-- /END ROW -->
-		
-	</div>
-	<!-- /END CONTAINER -->
-	
-	</section>
-	<!-- /CARACTERISTICAS -->
+<!-- /END FEATURES SECTION -->
 
 
 <!-- =========================
@@ -434,7 +434,7 @@
 		<!-- PHONES IMAGE -->
 		<div class="col-md-6 wow fadeInRight animated" data-wow-offset="10" data-wow-duration="1.5s">
 			<div class="phone-image">
-				<img src="images/2-phone-leftrutas-lugarest.jpg" alt="Imagen que muestra dos teléfonos sobrepuestos, en el teléfono principal muestra un screenshot de las rutas de la aplicación, y un texto que dice Ver ruta- Vista: todo">
+				<img src="images/2-iphone-6-left_cf.png" alt="Imagen que muestra dos teléfonos sobrepuestos, en el teléfono principal muestra un screenshot de las rutas de la aplicación, y un texto que dice Ver ruta- Vista: todo">
 			</div>
 		</div>
 		
@@ -743,74 +743,65 @@
 ============================== -->
 <section class="screenshots grey-bg" id="screenshot-section">
 
-	<div class="container">
-		
-		<!-- SECTION HEADER -->
-		<div class="section-header wow fadeIn animated" data-wow-offset="10" data-wow-duration="1.5s">
-			
-			<!-- SECTION TITLE -->
-			<h2 class="dark-text">Un vistazo a la aplicación</h2>
-			
-			<div class="colored-line">
-			</div>
-			<div class="section-description">
-				Para que te motives a descargar Ciudad Fácil, te dejamos algunas imágenes para que la conozcas.
-			</div>
-			<div class="colored-line">
-			</div>
-			
-		</div>
-		<!-- /END SECTION HEADER -->
-		
-		<div class="row wow bounceIn animated" data-wow-offset="10" data-wow-duration="1.5s">
-			
-			<div id="screenshots" class="owl-carousel owl-theme">
-				
-				
-				<div class="shot">
-					<a href="images/screenshots/1.jpg" data-lightbox-gallery="screenshots-gallery"><img src="images/screenshots/1.jpg" alt="Screenshot splash (pantalla de inicio)"></a>
-				</div>
+<div class="container">
 	
-				<div class="shot">
-					<a href="images/screenshots/2.jpg" data-lightbox-gallery="screenshots-gallery"><img src="images/screenshots/2.jpg" alt="Screenshot menú principal, con cuatro botones principales: mapa de accesibilidad, lugares de interés, mis rutas y perfil"></a>
-				</div>
-				
-				
-				<div class="shot">
-					<a href="images/screenshots/3.jpg" data-lightbox-gallery="screenshots-gallery"><img src="images/screenshots/3.jpg" alt="Screenshot mapa de la aplicación, que muestra lugares en verde y amarillo (accesible y medianamente accesible) y estacionamientos"></a>
-				</div>
-				
-				<div class="shot">
-					<a href="images/screenshots/4.jpg" data-lightbox-gallery="screenshots-gallery"><img src="images/screenshots/4.jpg" alt="Screenshot de recuadro de agregar marcador al mapa, con las opciones: lugar, barrera y estacionamiento"></a>
-				</div>
-				
-				<div class="shot">
-					<a href="images/screenshots/5.jpg" data-lightbox-gallery="screenshots-gallery"><img src="images/screenshots/5.jpg" alt="Screenshot de una barrera en el mapa que indica: peldaño - sin rebaje de vereda para atravesar desde est para pcd al banco o café"></a>
-				</div>
-				
-				<div class="shot">
-					<a href="images/screenshots/6.jpg" data-lightbox-gallery="screenshots-gallery"><img src="images/screenshots/6.jpg" alt="Screenshot detalle de una barrera del mapa, muestra el usuario que la agregó, una foto y descripción."></a>
-				</div>
-				
-				<div class="shot">
-					<a href="images/screenshots/7.jpg" data-lightbox-gallery="screenshots-gallery"><img src="images/screenshots/7.jpg" alt="Screenshot de las opciones para indicar nivel de accesibilidad (exterior e interior) de un lugar, además de indicaciones sobre el baño."></a>
-				</div>
-				
-				<div class="shot">
-					<a href="images/screenshots/8.jpg" data-lightbox-gallery="screenshots-gallery"><img src="images/screenshots/8.jpg" alt="Screenshot del mapa de ciudad fácil con una ruta demarcada"></a>
-				</div>
-				
-			</div>
-			<!-- /END SCREENSHOTS -->
-			
+	<!-- SECTION HEADER -->
+	<div class="section-header wow fadeIn animated" data-wow-offset="10" data-wow-duration="1.5s">
+		
+		<!-- SECTION TITLE -->
+		<h2 class="dark-text">Un vistazo a la aplicación</h2>
+		
+		<div class="colored-line">
 		</div>
-		<!-- /END ROW -->
+		<div class="section-description">
+			Para que te motives a descargar Ciudad Fácil, te dejamos algunas imágenes para que la conozcas.
+		</div>
+		<div class="colored-line">
+		</div>
 		
 	</div>
-	<!-- /END CONTAINER -->
+	<!-- /END SECTION HEADER -->
 	
-	</section>
-	<!-- /END SCREENSHOTS SECTION -->
+	<div class="row wow bounceIn animated" data-wow-offset="10" data-wow-duration="1.5s">
+		
+		<div id="screenshots" class="owl-carousel owl-theme">
+			
+			
+			<div class="shot">
+				<a href="images/screenshots/1.jpg" data-lightbox-gallery="screenshots-gallery"><img src="images/screenshots/1.jpg" alt="Screenshot splash (pantalla de inicio)"></a>
+			</div>
+
+			<div class="shot">
+				<a href="images/screenshots/2.jpg" data-lightbox-gallery="screenshots-gallery"><img src="images/screenshots/2.jpg" alt="Screenshot menú principal, con cuatro botones principales: mapa de accesibilidad, lugares de interés, mis rutas y perfil"></a>
+			</div>
+			
+			
+			<div class="shot">
+				<a href="images/screenshots/3.jpg" data-lightbox-gallery="screenshots-gallery"><img src="images/screenshots/3.jpg" alt="Screenshot mapa de la aplicación, que muestra lugares en verde y amarillo (accesible y medianamente accesible) y estacionamientos"></a>
+			</div>
+			
+			<div class="shot">
+				<a href="images/screenshots/4.jpg" data-lightbox-gallery="screenshots-gallery"><img src="images/screenshots/4.jpg" alt="Screenshot de recuadro de agregar marcador al mapa, con las opciones: lugar, barrera y estacionamiento"></a>
+			</div>
+			
+			<div class="shot">
+				<a href="images/screenshots/5.jpg" data-lightbox-gallery="screenshots-gallery"><img src="images/screenshots/5.jpg" alt="Screenshot de una barrera en el mapa que indica: peldaño - sin rebaje de vereda para atravesar desde est para pcd al banco o café"></a>
+			</div>
+			
+			<div class="shot">
+				<a href="images/screenshots/6.jpg" data-lightbox-gallery="screenshots-gallery"><img src="images/screenshots/6.jpg" alt="Screenshot detalle de una barrera del mapa, muestra el usuario que la agregó, una foto y descripción."></a>
+			</div>
+			
+			<div class="shot">
+				<a href="images/screenshots/7.jpg" data-lightbox-gallery="screenshots-gallery"><img src="images/screenshots/7.jpg" alt="Screenshot de las opciones para indicar nivel de accesibilidad (exterior e interior) de un lugar, además de indicaciones sobre el baño."></a>
+			</div>
+			
+			<div class="shot">
+				<a href="images/screenshots/8.jpg" data-lightbox-gallery="screenshots-gallery"><img src="images/screenshots/8.jpg" alt="Screenshot del mapa de ciudad fácil con una ruta demarcada"></a>
+			</div>
+			
+		</div>
+		<!-- /END SCREENSHOTS -->
 		
 	</div>
 	<!-- /END ROW -->
@@ -985,7 +976,7 @@
 	
 	<!-- COPYRIGHT TEXT -->
 	<p class="copyright">
-		©2015 Ciudad Fácil, All Rights Reserved
+		©2024 Ciudad Fácil, All Rights Reserved
 	</p>
 
 </div>
