@@ -1,0 +1,45 @@
+
+@media screen and (min-width: 600px) and (max-width: 1980px) {
+   #map { 
+   height: 600px; 
+
+	}
+
+	.legend {
+    line-height: 18px;
+    color: #555;
+    text-align: left;
+}
+
+.info {
+  padding: 6px 8px;
+  font: 14px/16px Arial, Helvetica, sans-serif;
+  background: white;
+  float:left;
+  text-align: left;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #map { 
+
+  
+  height: 400px; 
+  
+  }
+
+.legend {
+    line-height: 10px;
+    color: #555;
+    text-align: left;
+}
+
+.info {
+  padding: 2px 4px;
+  font: 10px/12px Arial, Helvetica, sans-serif;
+  background: white;
+  float:left;
+  text-align: left;
+  }
+}
+

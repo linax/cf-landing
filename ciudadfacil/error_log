@@ -1,0 +1,36 @@
+[28-May-2014 00:05:51 America/Chicago] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home2/nakco/public_html/ciudadfacil/addParking.php on line 92
+[28-May-2014 00:05:51 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in /home2/nakco/public_html/ciudadfacil/addParking.php on line 96
+[15-Jun-2014 12:49:27 America/Chicago] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE) in /home2/nakco/public_html/ciudadfacil/login.php on line 340
+[15-Jun-2014 12:51:33 America/Chicago] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE) in /home2/nakco/public_html/ciudadfacil/login.php on line 340
+[16-Jun-2014 15:14:32 America/Chicago] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, boolean given in /home2/nakco/public_html/ciudadfacil/evaluate.php on line 76
+[16-Jun-2014 15:15:56 America/Chicago] PHP Warning:  unlink(uploads/xml/): Is a directory in /home2/nakco/public_html/ciudadfacil/removeRoute.php on line 59
+[16-Jun-2014 15:16:15 America/Chicago] PHP Warning:  unlink(uploads/xml/): Is a directory in /home2/nakco/public_html/ciudadfacil/removeRoute.php on line 59
+[17-Jun-2014 20:53:43 America/Chicago] PHP Fatal error:  Cannot use [] for reading in /home2/nakco/public_html/ciudadfacil/resumen_datos.php on line 32
+[17-Jul-2014 19:15:17 America/Chicago] PHP Fatal error:  Call to undefined function addPlace() in /home2/nakco/public_html/ciudadfacil/versionCheck.php on line 38
+[17-Jul-2014 19:16:42 America/Chicago] PHP Fatal error:  Call to undefined function addPlace() in /home2/nakco/public_html/ciudadfacil/versionCheck.php on line 38
+[17-Jul-2014 19:17:32 America/Chicago] PHP Fatal error:  Call to undefined function addPlace() in /home2/nakco/public_html/ciudadfacil/versionCheck.php on line 38
+[17-Jul-2014 19:17:56 America/Chicago] PHP Fatal error:  Call to undefined function breakTransaction() in /home2/nakco/public_html/ciudadfacil/versionCheck.php on line 39
+[17-Jul-2014 19:18:27 America/Chicago] PHP Parse error:  syntax error, unexpected '$line' (T_VARIABLE) in /home2/nakco/public_html/ciudadfacil/versionCheck.php on line 41
+[17-Jul-2014 19:21:14 America/Chicago] PHP Parse error:  syntax error, unexpected '$line' (T_VARIABLE) in /home2/nakco/public_html/ciudadfacil/versionCheck.php on line 41
+[17-Jul-2014 19:22:07 America/Chicago] PHP Parse error:  syntax error, unexpected '$line' (T_VARIABLE) in /home2/nakco/public_html/ciudadfacil/versionCheck.php on line 41
+[17-Jul-2014 19:34:29 America/Chicago] PHP Parse error:  syntax error, unexpected 'as' (T_AS) in /home2/nakco/public_html/ciudadfacil/versionCheck.php on line 34
+[10-Sep-2014 05:47:11 America/Chicago] PHP Warning:  mysql_connect(): Too many connections in /home2/nakco/public_html/ciudadfacil/versionCheck.php on line 21
+[28-Oct-2014 19:54:53 America/Chicago] PHP Parse error:  syntax error, unexpected '"' in /home2/nakco/public_html/ciudadfacil/saveMarker.php on line 51
+[30-Oct-2014 15:25:34 America/Chicago] PHP Parse error:  syntax error, unexpected '"' in /home2/nakco/public_html/ciudadfacil/saveMarker.php on line 101
+[30-Oct-2014 15:27:47 America/Chicago] PHP Parse error:  syntax error, unexpected '}', expecting ',' or ';' in /home2/nakco/public_html/ciudadfacil/saveMarker.php on line 457
+[11-Feb-2015 11:43:07 America/Chicago] PHP Parse error:  syntax error, unexpected 'if' (T_IF) in /home2/nakco/public_html/ciudadfacil/checkMarker.php on line 70
+[11-Feb-2015 11:43:20 America/Chicago] PHP Parse error:  syntax error, unexpected 'if' (T_IF) in /home2/nakco/public_html/ciudadfacil/checkMarker.php on line 70
+[11-Feb-2015 11:46:59 America/Chicago] PHP Parse error:  syntax error, unexpected 'if' (T_IF) in /home2/nakco/public_html/ciudadfacil/checkMarker.php on line 139
+[11-Feb-2015 11:48:25 America/Chicago] PHP Parse error:  syntax error, unexpected 'if' (T_IF) in /home2/nakco/public_html/ciudadfacil/checkMarker.php on line 139
+[11-Feb-2015 11:48:35 America/Chicago] PHP Parse error:  syntax error, unexpected 'if' (T_IF) in /home2/nakco/public_html/ciudadfacil/checkMarker.php on line 139
+[11-Feb-2015 11:49:14 America/Chicago] PHP Parse error:  syntax error, unexpected 'if' (T_IF) in /home2/nakco/public_html/ciudadfacil/checkMarker.php on line 139
+[11-Feb-2015 11:49:20 America/Chicago] PHP Parse error:  syntax error, unexpected 'if' (T_IF) in /home2/nakco/public_html/ciudadfacil/checkMarker.php on line 139
+[11-Feb-2015 11:49:26 America/Chicago] PHP Parse error:  syntax error, unexpected 'if' (T_IF) in /home2/nakco/public_html/ciudadfacil/checkMarker.php on line 139
+[11-Feb-2015 11:49:33 America/Chicago] PHP Parse error:  syntax error, unexpected 'if' (T_IF) in /home2/nakco/public_html/ciudadfacil/checkMarker.php on line 139
+[11-Feb-2015 11:55:25 America/Chicago] PHP Parse error:  syntax error, unexpected 'if' (T_IF) in /home2/nakco/public_html/ciudadfacil/checkMarker.php on line 139
+[11-Feb-2015 11:56:17 America/Chicago] PHP Fatal error:  Call to a member function query() on a non-object in /home2/nakco/public_html/ciudadfacil/checkMarker.php on line 75
+[11-Feb-2015 11:58:42 America/Chicago] PHP Fatal error:  Call to a member function query() on a non-object in /home2/nakco/public_html/ciudadfacil/checkMarker.php on line 75
+[11-Feb-2015 11:59:31 America/Chicago] PHP Parse error:  syntax error, unexpected 'if' (T_IF) in /home2/nakco/public_html/ciudadfacil/checkMarker.php on line 70
+[11-Feb-2015 11:59:41 America/Chicago] PHP Parse error:  syntax error, unexpected 'if' (T_IF) in /home2/nakco/public_html/ciudadfacil/checkMarker.php on line 70
+[11-Feb-2015 16:00:00 America/Chicago] PHP Parse error:  syntax error, unexpected '{' in /home2/nakco/public_html/ciudadfacil/checkMarker.php on line 39
+[11-Feb-2015 16:00:10 America/Chicago] PHP Parse error:  syntax error, unexpected '{' in /home2/nakco/public_html/ciudadfacil/checkMarker.php on line 39
