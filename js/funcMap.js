@@ -75,12 +75,12 @@ function lugMapa(map, redIcon, greenIcon, yellowIcon)
 {
 
         $.ajax({
-            url: "http://localhost:3000/building",
+            url: "https://nestapi-nine.vercel.app/building",
             type: "GET",
             contentType: "application/x-www-form-urlencoded; charset=utf-8",
             dataType: 'json',
             success: function(data){ //data es todo lo que devuelve el controlador
-                //console.log("map data",data)
+                console.log("map data",data)
 
                 for (var i=0; i<data.length; i++) {
                     var evaluationPin = data[i].evaluationPin
