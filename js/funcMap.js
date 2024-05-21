@@ -80,7 +80,6 @@ function lugMapa(map, redIcon, greenIcon, yellowIcon)
             contentType: "application/x-www-form-urlencoded; charset=utf-8",
             dataType: 'json',
             success: function(data){ //data es todo lo que devuelve el controlador
-                console.log("map data",data)
 
                 for (var i=0; i<data.length; i++) {
                     var evaluationPin = data[i].evaluationPin
@@ -104,13 +103,13 @@ function lugMapa(map, redIcon, greenIcon, yellowIcon)
                      }
 
 
-                     L.marker(markerLocation, {icon: icono}).addTo(map).bindPopup(popupText)
+                    // L.marker(markerLocation, {icon: icono}).addTo(map).bindPopup(popupText)
                     
 
-                     //var marker = new L.Marker(markerLocation, {icon: icono});
-                     //map.addLayer(marker);
+                     var marker = new L.Marker(markerLocation, {icon: icono});
+                     map.addLayer(marker);
                  
-                     //marker.bindPopup(popupText);
+                     marker.bindPopup(popupText);
                      }                         
             },
             failure: function(){
