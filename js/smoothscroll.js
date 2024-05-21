@@ -6,6 +6,19 @@
 // - Patrick Brunner (patrickb1991@gmail.com)
 // - Michael Herf: ssc_pulse Algorithm
 
+
+
+$(document).ready(function() {
+    // Smooth scrolling script
+    $('a[href^="#"]').on('click', function(e) {
+        e.preventDefault();
+        var target = this.hash;
+        $('html, body').animate({
+            scrollTop: $(target).offset().top
+        }, 1000);
+    });
+});
+
 function ssc_init() {
     if (!document.body) return;
     var e = document.body;
