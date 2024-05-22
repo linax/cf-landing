@@ -83,34 +83,33 @@ function lugMapa(map, redIcon, greenIcon, yellowIcon)
 
                 for (var i=0; i<data.length; i++) {
                     var evaluationPin = data[i].evaluationPin
-                   // console.log(evaluationPin)
-           
-                    var lon = evaluationPin.longitude;
-                    var lat =evaluationPin.latitude;
-                    var popupText = evaluationPin.title;
-                    var acc = evaluationPin.weighted_evaluation;  
-                     var markerLocation = new L.LatLng(lat, lon);
-                     var icono;
 
-                     //Se indica el tipo de icono que se desplegará
+                   if(evaluationPin.evaluationPinType.id == 2){
 
-                     if(acc==1){
-                        icono = greenIcon;
-                     }
-                     else {
-                         if(acc==3) { icono =redIcon;  }
-                            else { icono = yellowIcon;}
-                     }
+                        var popupText = evaluationPin.title+ " "+ evaluationPin.latitude + " " + evaluationPin.longitude ;
+                        var acc = evaluationPin.weighted_evaluation;  
+                        var markerLocation = new L.LatLng(evaluationPin.latitude, evaluationPin.longitude);
+                        var icono;
+
+                        //Se indica el tipo de icono que se desplegará
+
+                        if(acc==1){
+                            icono = greenIcon;
+                        }
+                        else {
+                            if(acc==3) { icono =redIcon;  }
+                                else { icono = yellowIcon;}
+                        }
 
 
-                    // L.marker(markerLocation, {icon: icono}).addTo(map).bindPopup(popupText)
-                    
+                     // L.marker(markerLocation, {icon: icono}).addTo(map).bindPopup(popupText)
 
                      var marker = new L.Marker(markerLocation, {icon: icono});
                      map.addLayer(marker);
                  
                      marker.bindPopup(popupText);
-                     }                         
+                   }
+                }                         
             },
             failure: function(){
                 console.log("no se pudo conectar");
