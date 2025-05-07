@@ -3,69 +3,157 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mapa de Accesibilidad</title>
+    <title>Mapa de Lugares Accesibles</title>
     <!-- Leaflet CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-    <!-- Accessibility Cloud CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sozialhelden/accessibility-cloud-js@3.2.1/build/example/accessibility.cloud-3.2.1-2350f78a.css" />
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+      }
+      h1 {
+        color: #2c3e50;
+      }
       #map {
         height: 500px;
         width: 100%;
         margin-bottom: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+      .place-info {
+        margin-top: 20px;
+        padding: 15px;
+        background-color: #f8f9fa;
+        border-radius: 8px;
+      }
+      .place-item {
+        margin-bottom: 10px;
+        padding: 10px;
+        background-color: white;
+        border-radius: 4px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      }
+      .accessible {
+        color: #27ae60;
+        font-weight: bold;
+      }
+      .not-accessible {
+        color: #e74c3c;
       }
     </style>
   </head>
   <body>
-    <h1>Lugares accesibles en Berlín</h1>
+    <h1>Mapa de Lugares Accesibles</h1>
     <div id="map"></div>
-    <div id="accessibility-cloud-results"></div>
+    <div id="places-list" class="place-info">
+      <h2>Lugares encontrados (<span id="place-count">0</span>)</h2>
+      <div id="places-container"></div>
+    </div>
 
     <!-- Leaflet JS -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-    <!-- Accessibility Cloud JS -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/sozialhelden/accessibility-cloud-js@3.2.1/build/example/accessibility.cloud-3.2.1-21a6710d.min.js"></script>
 
-    <!-- Nuestro Script -->
-    <script type="text/javascript">
-      // Inicializa el mapa
-      const map = L.map("map").setView([52.5243, 13.4063], 14) // Berlín
-      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-      }).addTo(map)
+    <script>
+      $(document).ready(function () {
+        // Inicializar el mapa centrado en Viena
+        const map = L.map("map").setView([48.251, 16.5], 13)
 
-      // Configuración de Accessibility Cloud
-      window.onAccessibilityCloudLoaded = function (AccessibilityCloud) {
-        const element = document.getElementById("accessibility-cloud-results")
+        // Añadir capa de OpenStreetMap
+        L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+          attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map)
 
-        AccessibilityCloud.render(element, {
-          token: "d5429cd685c20a7d0a1166b7d929aa26",
-          locale: "de_DE",
-          requestParameters: {
-            latitude: 52.5243,
-            longitude: 13.4063,
-            accuracy: 1000,
-            limit: 20,
-            filter: "at-least-partially-accessible-by-wheelchair"
+        // Iconos personalizados
+        const wheelchairIcon = L.icon({
+          iconUrl: "https://cdn-icons-png.flaticon.com/512/3143/3143246.png",
+          iconSize: [32, 32],
+          iconAnchor: [16, 32],
+          popupAnchor: [0, -32]
+        })
+
+        const defaultIcon = L.icon({
+          iconUrl: "https://cdn-icons-png.flaticon.com/512/447/447031.png",
+          iconSize: [32, 32],
+          iconAnchor: [16, 32],
+          popupAnchor: [0, -32]
+        })
+
+        // Hacer la llamada AJAX a Accessibility Cloud
+        $.ajax({
+          dataType: "json",
+          url: "https://accessibility-cloud.freetls.fastly.net/place-infos",
+          data: {
+            appToken: "d5429cd685c20a7d0a1166b7d929aa26",
+            latitude: 48.251,
+            longitude: 16.5,
+            accuracy: 10000,
+            limit: 50
           },
-          // Callback cuando los lugares se cargan
-          onPlacesLoaded: function (places) {
-            places.forEach(place => {
-              if (place.location?.latitude && place.location?.longitude) {
-                const marker = L.marker([place.location.latitude, place.location.longitude]).addTo(map).bindPopup(`
-                                    <strong>${place.name || "Lugar sin nombre"}</strong><br>
-                                    ${place.accessibilityDescription || "Sin descripción de accesibilidad"}
-                                `)
-              }
+          headers: {
+            Accept: "application/json"
+          },
+          success: function (data) {
+            console.log("Datos recibidos:", data)
+
+            // Actualizar contador de lugares
+            $("#place-count").text(data.features.length)
+
+            // Procesar cada lugar
+            data.features.forEach(function (feature) {
+              const coords = feature.geometry.coordinates
+              const properties = feature.properties
+              const isAccessible = properties.accessibility?.accessibleWith?.wheelchair
+
+              // Crear marcador en el mapa
+              const marker = L.marker([coords[1], coords[0]], {
+                icon: isAccessible ? wheelchairIcon : defaultIcon
+              }).addTo(map)
+
+              // Contenido del popup
+              const popupContent = `
+                            <strong>${properties.name || "Lugar sin nombre"}</strong><br>
+                            <em>${properties.category || "Sin categoría"}</em><br>
+                            ${properties.address || "Dirección no disponible"}<br>
+                            Accesible con silla de ruedas: <strong>${isAccessible ? "Sí" : "No"}</strong>
+                        `
+
+              marker.bindPopup(popupContent)
+
+              // Añadir a la lista
+              const placeItem = `
+                            <div class="place-item">
+                                <h3>${properties.name}</h3>
+                                <p>${properties.address}</p>
+                                <p>Distancia: ${properties.distance ? Math.round(properties.distance) + "m" : "N/A"}</p>
+                                <p class="${isAccessible ? "accessible" : "not-accessible"}">
+                                    ${isAccessible ? "✅ Accesible para silla de ruedas" : "❌ No accesible para silla de ruedas"}
+                                </p>
+                            </div>
+                        `
+
+              $("#places-container").append(placeItem)
             })
+
+            // Ajustar el zoom para mostrar todos los marcadores
+            if (data.features.length > 0) {
+              const featureGroup = L.featureGroup()
+              data.features.forEach(function (feature) {
+                const coords = feature.geometry.coordinates
+                featureGroup.addLayer(L.marker([coords[1], coords[0]]))
+              })
+              map.fitBounds(featureGroup.getBounds().pad(0.2))
+            }
           },
-          // Manejo de errores
-          onError: function (error) {
-            console.error("Error al cargar datos:", error)
-            alert("No se pudieron cargar los lugares. Revisa la consola para más detalles.")
+          error: function (xhr, status, error) {
+            console.error("Error al obtener datos:", error)
+            alert("No se pudieron cargar los datos de accesibilidad. Por favor, inténtalo más tarde.")
           }
         })
-      }
+      })
     </script>
   </body>
 </html>
