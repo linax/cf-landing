@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mapa de Veredas Accesibles</title>
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+      }
+      h1 {
+        color: #2c3e50;
+      }
+      #map {
+        height: 500px;
+        width: 100%;
+        margin-bottom: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+      .place-info {
+        margin-top: 20px;
+        padding: 15px;
+        background-color: #f8f9fa;
+        border-radius: 8px;
+      }
+      .place-item {
+        margin-bottom: 10px;
+        padding: 10px;
+        background-color: white;
+        border-radius: 4px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      }
+      .accessible {
+        color: #27ae60;
+        font-weight: bold;
+      }
+      .not-accessible {
+        color: #e74c3c;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Mapa de Lugares Accesibles</h1>
+    <div id="map"></div>
+    <div id="places-list" class="place-info">
+      <h2>Lugares encontrados (<span id="place-count">0</span>)</h2>
+      <div id="places-container"></div>
+    </div>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        // Inicializar el mapa centrado en Viena
+        const map = L.map("map")
+
+        // Añadir capa de OpenStreetMap
+        L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+          attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map)
+
+        const defaultIcon = L.icon({
+          iconUrl: "https://cdn-icons-png.flaticon.com/512/447/447031.png",
+          iconSize: [32, 32],
+          iconAnchor: [16, 32],
+          popupAnchor: [0, -32]
+        })
+
+        // Hacer la llamada AJAX a Accessibility Cloud
+        $.ajax({
+          dataType: "json",
+          url: "https://sidewalk-chicago.cs.washington.edu//v2/access/attributesWithLabels?lat1=41.816&lng1=-87.615&lat2=41.83&lng2=-87.629",
+          headers: {
+            Accept: "application/json"
+          },
+          success: function (data) {
+            console.log("Datos recibidos:", data)
+
+            // Actualizar contador de lugares
+            $("#place-count").text(data.features.length)
+
+            // Procesar cada lugar
+            data.features.forEach(function (feature) {
+              const coords = feature.geometry.coordinates
+              const properties = feature.properties
+              const severity = properties.severity
+
+              // Crear marcador en el mapa
+              const marker = L.marker([coords[1], coords[0]], {
+                icon: defaultIcon
+              }).addTo(map)
+
+              // Contenido del popup
+              const popupContent = `
+                            <strong>${properties.label_type || "Vereda sin etiquetar"}</strong><br>
+                            <em>${properties.neighborhood || "Sin vecindario"}</em><br>
+                            ${properties.label_description || "Descripción no disponible"}<br>
+                            Severidad: <strong>${severity}</strong>
+                        `
+
+              marker.bindPopup(popupContent)
+            })
+
+            // Ajustar el zoom para mostrar todos los marcadores
+            if (data.features.length > 0) {
+              const featureGroup = L.featureGroup()
+              data.features.forEach(function (feature) {
+                const coords = feature.geometry.coordinates
+                featureGroup.addLayer(L.marker([coords[1], coords[0]]))
+              })
+              map.fitBounds(featureGroup.getBounds().pad(0.2))
+            }
+          },
+          error: function (xhr, status, error) {
+            console.error("Error al obtener datos:", error)
+            alert("No se pudieron cargar los datos de accesibilidad. Por favor, inténtalo más tarde.")
+          }
+        })
+      })
+    </script>
+  </body>
+</html>
