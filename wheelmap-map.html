@@ -88,8 +88,8 @@
           url: "https://accessibility-cloud.freetls.fastly.net/place-infos",
           data: {
             appToken: "d5429cd685c20a7d0a1166b7d929aa26",
-            latitude: 48.251,
-            longitude: 16.5,
+            latitude: -33.43877,
+            longitude: -70.652487,
             accuracy: 10000,
             limit: 50
           },
@@ -97,7 +97,7 @@
             Accept: "application/json"
           },
           success: function (data) {
-            console.log("Datos recibidos:", data)
+            //   console.log("Datos recibidos:", data)
 
             // Actualizar contador de lugares
             $("#place-count").text(data.features.length)
@@ -114,8 +114,12 @@
               }).addTo(map)
 
               // Contenido del popup
+              var name = "Lugar sin nombre"
+              if (properties.name != undefined) {
+                name = properties.name.en || properties.name.es || properties.name
+              }
               const popupContent = `
-                            <strong>${properties.name || "Lugar sin nombre"}</strong><br>
+                            <strong>${name}</strong><br>
                             <em>${properties.category || "Sin categoría"}</em><br>
                             ${properties.address || "Dirección no disponible"}<br>
                             Accesible con silla de ruedas: <strong>${isAccessible ? "Sí" : "No"}</strong>
